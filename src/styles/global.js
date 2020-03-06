@@ -1,5 +1,4 @@
 import { createGlobalStyle } from "styled-components";
-import { background, text } from "./root";
 
 export const GlobalStyle = createGlobalStyle`
 * {
@@ -12,23 +11,26 @@ export const GlobalStyle = createGlobalStyle`
 html,
 body,
 #root {
-  height: 100%;
+  height: 100vh;
+  max-width: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 html {
-    color: ${text};
-    font-size: 1em;
-    line-height: 1.4;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none
+  color: ${props => props.theme.foreground};
+  font-size: 1em;
+  line-height: 1.4;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none
 }
 
 body {
-  background: ${background};
+  background: ${props => props.theme.background};
   -webkit-font-smoothing: antialiased;
 }
 
@@ -39,54 +41,31 @@ button {
 }
 
 img {
-    max-width: 100%;
-    vertical-align: bottom
+  max-width: 100%;
+  vertical-align: bottom
 }
 
 a {
-    color: #444;
-    text-decoration: none
+  color: ${props => props.theme.accent};
+  text-decoration: none
 }
 
 a:hover {
-    color: #444
+  color: ${props => props.theme.accent}
 }
 
-a:focus {
-    outline: 0
-}
-
-a:hover,a:active {
-    outline: 0
+a:focus, a:hover, a:active {
+  outline: 0
 }
 
 input:focus {
-    outline: 0;
-    border: 1px solid #04a4cc
-}
-
-.wrapper {
-    max-width: 1280px;
-    width: 95%;
-    margin: 0 auto;
-    position: relative
+  outline: 0;
+  border: 1px solid ${props => props.theme.second}
 }
 
 ::selection {
-    background: #04a4cc;
-    color: #fff;
-    text-shadow: none
-}
-
-::-webkit-selection {
-    background: #04a4cc;
-    color: #fff;
-    text-shadow: none
-}
-
-::-moz-selection {
-    background: #04a4cc;
-    color: #fff;
-    text-shadow: none
+  background: ${props => props.theme.second};
+  color: #fff;
+  text-shadow: none
 }
 `;

@@ -2,19 +2,25 @@ import React from "react";
 
 import logo from "../../assets/logo.svg";
 import title from "../../assets/title.svg";
+
 import { ReactComponent as Home } from "../../assets/home.svg";
 import { ReactComponent as About } from "../../assets/about.svg";
 import { ReactComponent as Skills } from "../../assets/skills.svg";
 import { ReactComponent as Work } from "../../assets/work.svg";
 import { ReactComponent as Contact } from "../../assets/contact.svg";
 
-import * as S from "./styles";
+import { ReactComponent as Facebook } from "../../assets/facebook.svg";
+import { ReactComponent as Instagram } from "../../assets/instagram.svg";
+import { ReactComponent as Linkedin } from "../../assets/linkedin.svg";
+import { ReactComponent as Github } from "../../assets/github.svg";
+
+import { Container } from "./styles";
 
 export default function Sidebar() {
   const url = window.location.pathname;
   return (
     <React.Fragment>
-      <S.Sidebar />
+      <Container />
       <div className="sidebar">
         <a className="logo" rel="index" href="/">
           <img
@@ -74,7 +80,7 @@ export default function Sidebar() {
               rel="noopener noreferrer"
               target="_blank"
             >
-              <S.IconGithub />
+              <Github />
             </a>
           </li>
           <li>
@@ -84,7 +90,7 @@ export default function Sidebar() {
               rel="noopener noreferrer"
               target="_blank"
             >
-              <S.IconLinkedin />
+              <Linkedin />
             </a>
           </li>
           <li>
@@ -94,7 +100,7 @@ export default function Sidebar() {
               rel="noopener noreferrer"
               target="_blank"
             >
-              <S.IconFacebook />
+              <Facebook />
             </a>
           </li>
           <li>
@@ -104,7 +110,7 @@ export default function Sidebar() {
               rel="noopener noreferrer"
               target="_blank"
             >
-              <S.IconInstagram />
+              <Instagram />
             </a>
           </li>
         </ul>

@@ -1,13 +1,12 @@
 import { createGlobalStyle } from "styled-components";
 import * as remixFill from "@styled-icons/remix-fill";
-import { primary } from "../../styles/root";
 
 export const IconGithub = remixFill.Github;
 export const IconInstagram = remixFill.Instagram;
 export const IconFacebook = remixFill.FacebookBox;
 export const IconLinkedin = remixFill.LinkedinBox;
 
-export const Sidebar = createGlobalStyle`
+export const Container = createGlobalStyle`
 .sidebar {
   background: #181818;
   width: 60px;
@@ -38,7 +37,7 @@ export const Sidebar = createGlobalStyle`
 }
 
 nav {
-    top: 35%; 
+    top: 35%;
     width: 100%;
     display: block;
     position: absolute;
@@ -46,8 +45,8 @@ nav {
 }
 
 nav a {
-    margin: 10px 20px 25px;
-    color: #4d4d4e;
+    margin: 5px 16px 20px;
+    color: ${props => props.theme.accent};
     display: block;
     position: relative;
     text-decoration: none;
@@ -64,7 +63,7 @@ nav a:hover svg {
 }
 
 nav a.active,nav a:hover {
-    color: ${primary}
+    color: ${props => props.theme.primary}
 }
 
 nav a:after {
@@ -139,9 +138,9 @@ ul {
 ul li a {
     padding: 5px 0;
     display: block;
-    width: 25%;
+    width: 30%;
     margin: auto;
-    color: #4d4d4e
+    color: ${props => props.theme.accent}
 }
 
 a#github:hover {
@@ -157,7 +156,7 @@ a#instagram:hover {
     color: #d6249f
 }
 
-@media only screen and (max-height: 700px) { 
+@media only screen and (max-height: 700px) {
     ul{
         display: none;
     }
