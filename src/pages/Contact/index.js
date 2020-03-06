@@ -1,19 +1,19 @@
 import React from "react";
 
-import { Page, Container } from "./styles";
-
 import TagsArea from "../../components/TagsArea";
 import LogoArea from "../../components/LogoArea";
 import TextArea from "../../components/TextArea";
 
-export default function Home() {
-  document.title = "William's Portfólio";
+import { Page, Container } from "./styles";
+
+export default function Contact() {
+  document.title = "Contact Me |  William's Portfólio";
 
   return (
     <Page>
       <Container>
         <TagsArea />
-        <TextArea />
+        <TextArea text="Contact Me" />
         <LogoArea />
       </Container>
     </Page>

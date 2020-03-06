@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter } from "react-router-dom";
+import { HashRouter as Router } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 import { GlobalStyle } from "./styles/global";
 
@@ -16,12 +16,12 @@ export default function App() {
   };
 
   return (
-    <BrowserRouter>
+    <Router>
       <ThemeProvider theme={theme}>
         <GlobalStyle />
         <Sidebar />
         <Routes />
       </ThemeProvider>
-    </BrowserRouter>
+    </Router>
   );
 }

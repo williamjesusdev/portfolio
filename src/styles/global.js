@@ -12,7 +12,8 @@ html,
 body,
 #root {
   height: 100vh;
-  max-width: 100%;
+  max-width: 100vw;
+  min-heigh: 690px;
   overflow-x: hidden;
   overflow-y: hidden;
 }
