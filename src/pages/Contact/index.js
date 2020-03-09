@@ -13,8 +13,8 @@ export default function Contact() {
     <Page>
       <Container>
         <LogoArea />
-        <TagsArea position="56%" />
-        <TextArea text="Contact Me" />
+        <TagsArea position="36" />
+        <TextArea text="Contact" />
       </Container>
     </Page>
   );

@@ -51,7 +51,7 @@ input:focus {
   color: #fff;
 }
 
-@media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
+@media screen and (min-width: 320px) and (max-width: 819px) and (orientation: landscape) {
   html {
   max-width: 100vh;
   min-height: 100vw;

@@ -10,65 +10,145 @@ const toAnimate = keyframes`
 `;
 
 const rubberBand = keyframes`
-from {
-    transform: scale3d(1, 1, 1);
-  }
+0% {
+  -webkit-transform: scale3d(1,1,1);
+  -ms-transform: scale3d(1,1,1);
+  transform: scale3d(1,1,1)
+}
 
-  30% {
-    transform: scale3d(1.25, 0.75, 1);
-  }
+30% {
+  -webkit-transform: scale3d(1.25,.75,1);
+  -ms-transform: scale3d(1.25,.75,1);
+  transform: scale3d(1.25,.75,1)
+}
 
-  40% {
-    transform: scale3d(0.75, 1.25, 1);
-  }
+40% {
+  -webkit-transform: scale3d(.75,1.25,1);
+  -ms-transform: scale3d(.75,1.25,1);
+  transform: scale3d(.75,1.25,1)
+}
 
-  50% {
-    transform: scale3d(1.15, 0.85, 1);
-  }
+50% {
+  -webkit-transform: scale3d(1.15,.85,1);
+  -ms-transform: scale3d(1.15,.85,1);
+  transform: scale3d(1.15,.85,1)
+}
 
-  65% {
-    transform: scale3d(.95, 1.05, 1);
-  }
+65% {
+  -webkit-transform: scale3d(.95,1.05,1);
+  -ms-transform: scale3d(.95,1.05,1);
+  transform: scale3d(.95,1.05,1)
+}
 
-  75% {
-    transform: scale3d(1.05, .95, 1);
-  }
+75% {
+  -webkit-transform: scale3d(1.05,.95,1);
+  -ms-transform: scale3d(1.05,.95,1);
+  transform: scale3d(1.05,.95,1)
+}
 
-  to {
-    transform: scale3d(1, 1, 1);
-  }
+100% {
+  -webkit-transform: scale3d(1,1,1);
+  -ms-transform: scale3d(1,1,1);
+  transform: scale3d(1,1,1)
+}
 `;
 
 export const Container = styled.div`
   position: absolute;
-  top: 33%;
-  left: 130px;
-  font-size: 28px;
+  top: 30%;
+  left: 145px;
+  font-size: 4vh;
   font-weight: 900;
+  color: #fff;
+
+  @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
+    font-size: 5vw;
+  }
+
+  @media screen and (min-height: 320px) and (max-height: 819px) and (orientation: portrait) {
+    left: 90px;
+    font-size: 3vh;
+  }
 `;
 
 export const Span = styled.span`
-  margin-right: 0.8%;
-  font-size: 56px;
-  line-height: 53px;
-  animation-duration: 1s;
-  animation-fill-mode: both;
-  animation-iteration-count: 1;
+  color: #fff;
+  font-size: 7.4vh;
+  line-height: 7.1vh;
+  letter-spacing: 2px;
   display: inline-block;
+  transition: all 0.3s linear;
 
   &:hover {
+    animation: ${rubberBand} 1s backwards;
     color: ${props => props.theme.second};
-    animation-name: ${rubberBand};
+  }
+
+  @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
+    font-size: 8vw;
+    line-height: 7.5vw;
+  }
+
+  @media screen and (min-height: 320px) and (max-height: 819px) and (orientation: portrait) {
+    font-size: 9.4vw;
   }
 `;
 
 export const Sub = styled.h2`
   color: #8d8d8d;
-  margin-top: 25px;
+  margin-top: 35px;
   font-weight: 400;
   font-size: 12px;
   font-family: "Open Sans", sans-serif;
-  letter-spacing: 3px;
-  -webkit-animation: myanim2 1s 1.8s backwards;
-  animation: ${toAnimate} 1s 3.8s backwards;
+  letter-spacing: 2px;
+  animation: ${toAnimate} 1s 5s backwards;
+`;
+
+export const Button = styled.button`
+  background: ${props => props.theme.background || "white"};
+  color: ${props => props.theme.primary || "palevioletred"};
+
+  margin-top: 20px;
+  cursor: pointer;
+  font-size: 0.85em;
+  padding: 0.25em 1em;
+  border: 2px solid ${props => props.theme.primary || "palevioletred"};
+  border-radius: 3px;
+  animation: ${toAnimate} 1s 5s backwards;
+`;
+
+export const Paragraph = styled.div`
+  color: #fff;
+  width: 40vw;
+  margin-top: 35px;
+  font-size: 16px;
+  font-weight: 300;
+  animation: ${toAnimate} 1s 2s backwards;
+
+  > * {
+    margin: 10px auto;
+  }
+
+  @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
+    width: 70vw;
+    font-size: 15px;
+  }
+
+  @media screen and (min-height: 320px) and (max-height: 819px) and (orientation: portrait) {
+    width: 38vh;
+    font-size: 15px;
+    & > p:nth-child(n + 3) {
+      display: none;
+    }
+  }
+`;
+
+export const Title = styled.h1`
+  font-size: 4.5vh;
+  font-weight: 900;
+  color: ${props => props.theme.primary};
+
+  @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
+    font-size: 6.3vw;
+  }
 `;

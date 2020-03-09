@@ -11,19 +11,22 @@ const svgAnimation = keyframes`
 
 export const Container = styled.div`
   position: absolute;
-  height: 100%;
+  height: 90vh;
   width: 50%;
   top: 0;
   bottom: 0;
-  right: 5%;
-  margin: auto;
+  left: auto;
+  right: 10%;
+  margin: 0;
 
   > svg {
     position: absolute;
-    top: 5%;
+    top: 4vh;
+    bottom: 4vh;
+    left: auto;
     right: 10%;
-    left: 10%;
-    bottom: 0;
+    max-height: 80vh;
+    margin: 0;
 
     > * #arrow {
       animation: ${svgAnimation} 15s -1s;
@@ -39,23 +42,21 @@ export const Container = styled.div`
     }
   }
 
-  @media(max-width: 940px) {
+  @media(max-width: 939px) {
     display: none
   }
 
-  @media(max-width: 1000px) {
-    width: 80%;
+  @media(max-width: 1079px) {
     > svg {
-      width: 95%;
+      width: 96%;
     }
   }
 
-  @media(max-width: 1060px) {
-    width: 70%;
-  }
-
-  @media(max-width: 1180px) {
-    width: 60%;
+  @media(max-width: 1359px) {
+    right: 2%;
+    > svg {
+      right: 2%;
+    }
   }
 }
 `;

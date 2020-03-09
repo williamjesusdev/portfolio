@@ -23,7 +23,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "yarn build",
-    "deploy": "gh-pages -d build -b master -r https://github.com/williamjesusti/williamjesusti.github.io -f"
+    "deploy": "gh-pages -d build -b master -r https://github.com/williamjesusdev/williamjesusdev.github.io -f"
   },
   "eslintConfig": {
     "extends": "react-app"

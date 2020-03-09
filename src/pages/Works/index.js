@@ -13,8 +13,8 @@ export default function Works() {
     <Page>
       <Container>
         <LogoArea />
-        <TagsArea position="56%" />
-        <TextArea text="My Works" />
+        <TagsArea position="36" />
+        <TextArea text="Works" />
       </Container>
     </Page>
   );

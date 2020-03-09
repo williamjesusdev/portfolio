@@ -1,73 +1,73 @@
-import styled, { createGlobalStyle } from "styled-components";
+import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const Container = styled.div`
   position: absolute;
   top: 0;
   bottom: 0;
-  background: #262626;
+  background: #222;
   width: 60px;
   z-index: 1;
   min-height: 100vh;
+  max-height: 100vh;
   text-align: center;
 
-  @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
+  @media screen and (min-width: 320px) and (max-width: 819px) and (orientation: landscape) {
     min-height: 100vw;
   }
 `;
 
-export const Logo = styled.div`
+export const Header = styled.div`
   background: #070707;
   display: block;
   padding: 8px 0;
-
-  > a > img {
-    display: block;
-    margin: 8px auto;
-    width: 80%;
   }
+`;
 
-  > a > img:first-child + img {
+export const Logo = styled.img`
+  display: block;
+  margin: 8px auto;
+  width: 80%;
+
+  &:first-child + img {
     margin-top: 12px;
     margin-bottom: -5px;
     width: 90%;
   }
 `;
 
-export const Image = styled.img``;
 export const LinkBlank = styled.a``;
-export const Component = createGlobalStyle`
-nav {
-    top: 30%;
-    width: 100%;
-    display: block;
-    position: absolute;
-    text-align: center;
-}
 
-nav a {
-    padding: 15px;
-    color: ${props => props.theme.accent};
-    display: block;
-    position: relative;
-    text-decoration: none;
-    text-align: center;
-}
+export const Nav = styled.nav`
+  top: 35%;
+  width: 100%;
+  display: block;
+  position: absolute;
+  text-align: center;
+`;
 
-nav a svg {
-    -webkit-transition: all .3s ease-out;
-    transition: all .3s ease-out
-}
+export const NavLink = styled(Link)`
+  padding: 8px 17px;
+  color: ${props => props.theme.accent};
+  display: block;
+  position: relative;
+  text-decoration: none;
+  text-align: center;
 
-nav a:hover svg {
-    opacity: 0
-}
+  > svg {
+    transition: all 0.3s ease-out;
+  }
 
-nav a.active,nav a:hover {
-    color: ${props => props.theme.primary}
-}
+  &.active,
+  &:hover {
+    color: ${props => props.theme.primary};
+  }
 
-nav a:after {
-    content: '';
+  &:hover svg {
+    opacity: 0;
+  }
+
+  &:after {
     font-size: 9px;
     top: 40%;
     letter-spacing: 2px;
@@ -78,68 +78,50 @@ nav a:after {
     width: 100%;
     text-align: center;
     opacity: 0;
-    -webkit-transition: all .3s ease-out;
-    transition: all .3s ease-out
-}
+    transition: all 0.3s ease-out;
+  }
 
-nav a:first-child:after {
-    content: 'HOME'
-}
+  &[name]:after {
+    text-transform: uppercase;
+    content: attr(name);
+  }
 
-nav a:first-child+a:after {
-    content: 'ABOUT'
-}
+  &:hover:after {
+    opacity: 1;
+  }
+`;
 
-nav a:first-child+a+a:after {
-    content: 'SKILLS'
-}
+export const List = styled.ul`
+  position: absolute;
+  height: 60px;
+  bottom: 12%;
+  width: 100%;
+  display: block;
+  padding: 0;
+  list-style: none;
 
-nav a:first-child+a+a+a:after {
-    content: 'MY WORK'
-}
-
-nav a:first-child+a+a+a+a:after {
-    content: 'CONTACT'
-}
-
-nav a:hover:after {
-    opacity: 1
-}
-
-ul {
-    position: absolute;
-    height: 60px;
-    top: 80%;
-    width: 100%;
-    display: block;
-    padding: 0;
-    list-style: none;
-}
-
-ul li a {
+  * > a {
     padding: 5px 0;
     display: block;
     width: 30%;
     margin: auto;
-    color: ${props => props.theme.accent}
-}
+    color: ${props => props.theme.accent};
 
-a#github:hover {
-    color: #283e4a
-}
-a#facebook:hover {
-    color: #4267b2
-}
-a#linkedin:hover {
-    color: #285AEB
-}
-a#instagram:hover {
-    color: #bc1888
-}
-
-@media only screen and (max-height: 700px) {
-    ul{
-        display: none;
+    &#github:hover {
+      color: #283e4a;
     }
- }
+    &#facebook:hover {
+      color: #4267b2;
+    }
+    &#linkedin:hover {
+      color: #285aeb;
+    }
+    &#instagram:hover {
+      color: #bc1888;
+    }
+  }
+
+  @media only screen and (max-height: 629px) {
+    display: none;
+  }
 `;

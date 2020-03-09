@@ -15,72 +15,90 @@ import { ReactComponent as Instagram } from "../../assets/instagram.svg";
 import { ReactComponent as Linkedin } from "../../assets/linkedin.svg";
 import { ReactComponent as Github } from "../../assets/github.svg";
 
-import { Container, Logo, Image, LinkBlank, Component } from "./styles";
+import {
+  Container,
+  Header,
+  Logo,
+  Nav,
+  NavLink,
+  LinkBlank,
+  List
+} from "./styles";
 
 export default function Sidebar() {
-  const [url, setUrl] = useState("/");
+  const [url, setUrl] = useState("");
   const path = window.location.hash.split("#/")[1];
   path !== url && setUrl(path);
+
+  function handleClick(e) {
+    const url = e.target.name !== "home" ? e.target.name : "";
+    setUrl(url);
+  }
+
   return (
     <React.Fragment>
-      <Component />
       <Container>
-        <Logo>
+        <Header>
           <Link to="/" onClick={() => setUrl("")}>
-            <Image
+            <Logo
               src={logo}
               alt="Wordpress Developer, Web Developer, Front End Developer"
             />
-            <Image
+            <Logo
               top="20px"
               src={title}
               alt="Wordpress Developer, Web Developer , Front End Developer"
             />
           </Link>
-        </Logo>
-        <nav>
-          <Link
+        </Header>
+        <Nav>
+          <NavLink
             to="/"
-            onClick={() => setUrl("")}
-            className={url === "" ? "home active" : ""}
+            name="home"
+            onClick={handleClick}
+            className={url === "" && "home active"}
           >
             <Home />
-          </Link>
-          <Link
+          </NavLink>
+          <NavLink
             to="about"
-            onClick={() => setUrl("about")}
-            className={url === "about" ? "about active" : ""}
+            name="about"
+            onClick={handleClick}
+            className={url === "about" && "about active"}
           >
             <About />
-          </Link>
-          <Link
+          </NavLink>
+          <NavLink
             to="skills"
-            onClick={() => setUrl("skills")}
-            className={url === "skills" ? "skills active" : ""}
+            name="skills"
+            onClick={handleClick}
+            className={url === "skills" && "skills active"}
           >
             <Skills />
-          </Link>
-          <Link
+          </NavLink>
+          <NavLink
             to="works"
-            onClick={() => setUrl("works")}
-            className={url === "works" ? "works active" : ""}
+            name="works"
+            onClick={handleClick}
+            className={url === "works" && "works active"}
           >
             <Works />
-          </Link>
-          <Link
+          </NavLink>
+          <NavLink
             to="contact"
-            onClick={() => setUrl("contact")}
-            className={url === "contact" ? "contact active" : ""}
+            name="contact"
+            onClick={handleClick}
+            className={url === "contact" && "contact active"}
           >
             <Contact />
-          </Link>
-        </nav>
-        <ul>
+          </NavLink>
+        </Nav>
+        <List>
           <li>
             <LinkBlank
               id="github"
               basename="./ asas"
-              href="https://github.com/williamjesusti"
+              href="https://github.com/WilliamJesusDev"
               rel="noopener noreferrer"
               target="_blank"
             >
@@ -90,7 +108,7 @@ export default function Sidebar() {
           <li>
             <LinkBlank
               id="linkedin"
-              href="https://linkedin.com/in/williamjesusti"
+              href="https://linkedin.com/in/WilliamJesusDev"
               rel="noopener noreferrer"
               target="_blank"
             >
@@ -117,7 +135,7 @@ export default function Sidebar() {
               <Instagram />
             </LinkBlank>
           </li>
-        </ul>
+        </List>
       </Container>
     </React.Fragment>
   );

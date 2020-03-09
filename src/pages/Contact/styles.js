@@ -4,7 +4,6 @@ export const Page = styled.div`
   position: absolute;
   width: 100vw;
   height: 100vh;
-  display: flex;
 
   @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
     min-height: 100vw;
@@ -15,9 +14,16 @@ export const Page = styled.div`
 export const Container = styled.div`
   position: absolute;
   will-change: contents;
-  height: 94%;
+  height: 94vh;
   width: 100%;
-  min-height: 566px;
   margin: 0 auto;
-  top: 5%;
+  top: 5vh;
+  bottom: 5vh;
+
+  @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
+    min-height: 94vw;
+    min-width: 100vh;
+    top: 5vw;
+    bottom: 5vw;
+  }
 `;

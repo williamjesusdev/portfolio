@@ -13,7 +13,7 @@ export default function Skills() {
     <Page>
       <Container>
         <LogoArea />
-        <TagsArea position="56%" />
+        <TagsArea position="36" />
         <TextArea text="My Skills" />
       </Container>
     </Page>
