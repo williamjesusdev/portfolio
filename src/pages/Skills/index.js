@@ -12,9 +12,9 @@ export default function Skills() {
   return (
     <Page>
       <Container>
-        <TagsArea />
-        <TextArea text="My Skills" />
         <LogoArea />
+        <TagsArea position="56%" />
+        <TextArea text="My Skills" />
       </Container>
     </Page>
   );

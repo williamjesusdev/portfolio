@@ -12,9 +12,9 @@ export default function Contact() {
   return (
     <Page>
       <Container>
-        <TagsArea />
-        <TextArea text="Contact Me" />
         <LogoArea />
+        <TagsArea position="56%" />
+        <TextArea text="Contact Me" />
       </Container>
     </Page>
   );

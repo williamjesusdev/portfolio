@@ -11,43 +11,51 @@ const svgAnimation = keyframes`
 
 export const Container = styled.div`
   position: absolute;
-  height: 320px;
-  width: 620px;
+  height: 100%;
+  width: 50%;
   top: 0;
   bottom: 0;
-  left: 30%;
-  right: 0;
+  right: 5%;
   margin: auto;
 
   > svg {
-    margin: auto;
-    transform: rotate(45deg);
+    position: absolute;
+    top: 5%;
+    right: 10%;
+    left: 10%;
+    bottom: 0;
 
     > * #arrow {
-      animation-delay: 1s;
-      animation: ${svgAnimation} 20s;
+      animation: ${svgAnimation} 15s -1s;
     }
     > * #w {
-      animation-delay: 1s;
-      animation: ${svgAnimation} 15s;
+      animation: ${svgAnimation} 15s -1s;
     }
     > * #j {
-      animation-delay: 1s;
-      animation: ${svgAnimation} 10s;
+      animation: ${svgAnimation} 15s -1s;
     }
     > * #dot {
-      animation-delay: 1s;
-      animation: ${svgAnimation} 5s;
-    }*/
+      animation: ${svgAnimation} 15s -1s;
+    }
   }
 
-
-  @media(max-width: 920px) {
+  @media(max-width: 940px) {
     display: none
   }
 
-  @media(min-width: 1120px) {
-    width: 720px;
+  @media(max-width: 1000px) {
+    width: 80%;
+    > svg {
+      width: 95%;
+    }
+  }
+
+  @media(max-width: 1060px) {
+    width: 70%;
+  }
+
+  @media(max-width: 1180px) {
+    width: 60%;
   }
 }
 `;

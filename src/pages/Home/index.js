@@ -12,9 +12,9 @@ export default function Home() {
   return (
     <Page>
       <Container>
+        <LogoArea />
         <TagsArea />
         <TextArea />
-        <LogoArea />
       </Container>
     </Page>
   );

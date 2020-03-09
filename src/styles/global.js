@@ -11,23 +11,15 @@ export const GlobalStyle = createGlobalStyle`
 html,
 body,
 #root {
-  height: 100vh;
   max-width: 100vw;
-  min-heigh: 690px;
-  overflow-x: hidden;
-  overflow-y: hidden;
+  min-height: 100vh;
+  max-height: 100vh;
 }
 
 html {
   color: ${props => props.theme.foreground};
   font-size: 1em;
   line-height: 1.4;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none
 }
 
 body {
@@ -43,7 +35,6 @@ button {
 
 img {
   max-width: 100%;
-  vertical-align: bottom
 }
 
 a {
@@ -51,22 +42,20 @@ a {
   text-decoration: none
 }
 
-a:hover {
-  color: ${props => props.theme.accent}
-}
-
-a:focus, a:hover, a:active {
-  outline: 0
-}
-
 input:focus {
-  outline: 0;
   border: 1px solid ${props => props.theme.second}
 }
 
 ::selection {
   background: ${props => props.theme.second};
   color: #fff;
-  text-shadow: none
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
+  html {
+  max-width: 100vh;
+  min-height: 100vw;
+  max-height: 100vw;
+  }
 }
 `;

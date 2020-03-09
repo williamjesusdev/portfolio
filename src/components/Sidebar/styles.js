@@ -1,13 +1,18 @@
 import styled, { createGlobalStyle } from "styled-components";
 
 export const Container = styled.div`
-  top: 0;
   position: absolute;
+  top: 0;
+  bottom: 0;
   background: #262626;
   width: 60px;
   z-index: 1;
   min-height: 100vh;
   text-align: center;
+
+  @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
+    min-height: 100vw;
+  }
 `;
 
 export const Logo = styled.div`
@@ -103,7 +108,8 @@ nav a:hover:after {
 
 ul {
     position: absolute;
-    bottom: 20px;
+    height: 60px;
+    top: 80%;
     width: 100%;
     display: block;
     padding: 0;

@@ -11,9 +11,9 @@ export default function About() {
   return (
     <Page>
       <Container>
-        <TagsArea />
-        <TextArea text="About Me" />
         <LogoArea />
+        <TagsArea position="56%" />
+        <TextArea text="About Me" />
       </Container>
     </Page>
   );
