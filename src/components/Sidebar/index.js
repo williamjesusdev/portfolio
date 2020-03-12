@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 
 import logo from "../../assets/logo.svg";
@@ -22,119 +22,78 @@ import {
   Nav,
   NavLink,
   LinkBlank,
-  List
+  List,
+  ChildrenList
 } from "./styles";
 
 export default function Sidebar() {
-  const [url, setUrl] = useState("");
-  const path = window.location.hash.split("#/")[1];
-  path !== url && setUrl(path);
-
-  function handleClick(e) {
-    const url = e.target.name !== "home" ? e.target.name : "";
-    setUrl(url);
-  }
-
   return (
     <React.Fragment>
       <Container>
         <Header>
-          <Link to="/" onClick={() => setUrl("")}>
-            <Logo
-              src={logo}
-              alt="Wordpress Developer, Web Developer, Front End Developer"
-            />
-            <Logo
-              top="20px"
-              src={title}
-              alt="Wordpress Developer, Web Developer , Front End Developer"
-            />
+          <Link to="/">
+            <Logo src={logo} alt="William Jesus Logo" />
+            <Logo top="20px" src={title} alt="William Jesus sub" />
           </Link>
         </Header>
         <Nav>
-          <NavLink
-            to="/"
-            name="home"
-            onClick={handleClick}
-            className={url === "" && "home active"}
-          >
+          <NavLink exact to="/" name="home" activeClassName="active">
             <Home />
           </NavLink>
-          <NavLink
-            to="about"
-            name="about"
-            onClick={handleClick}
-            className={url === "about" && "about active"}
-          >
+          <NavLink to="about" name="about" activeClassName="active">
             <About />
           </NavLink>
-          <NavLink
-            to="skills"
-            name="skills"
-            onClick={handleClick}
-            className={url === "skills" && "skills active"}
-          >
+          <NavLink to="skills" name="skills" activeClassName="active">
             <Skills />
           </NavLink>
-          <NavLink
-            to="works"
-            name="works"
-            onClick={handleClick}
-            className={url === "works" && "works active"}
-          >
+          <NavLink to="works" name="works" activeClassName="active">
             <Works />
           </NavLink>
-          <NavLink
-            to="contact"
-            name="contact"
-            onClick={handleClick}
-            className={url === "contact" && "contact active"}
-          >
+          <NavLink to="contact" name="contact" activeClassName="active">
             <Contact />
           </NavLink>
         </Nav>
         <List>
-          <li>
+          <ChildrenList>
             <LinkBlank
               id="github"
-              basename="./ asas"
               href="https://github.com/WilliamJesusDev"
-              rel="noopener noreferrer"
               target="_blank"
+              rel="noopener noreferrer"
             >
               <Github />
             </LinkBlank>
-          </li>
-          <li>
+          </ChildrenList>
+          <ChildrenList>
             <LinkBlank
               id="linkedin"
               href="https://linkedin.com/in/WilliamJesusDev"
-              rel="noopener noreferrer"
               target="_blank"
+              rel="noopener noreferrer"
             >
               <Linkedin />
             </LinkBlank>
-          </li>
-          <li>
+          </ChildrenList>
+          <ChildrenList>
             <LinkBlank
               id="facebook"
               href="https://www.facebook.com/WillZinhOZ"
-              rel="noopener noreferrer"
               target="_blank"
+              rel="noopener noreferrer"
             >
               <Facebook />
             </LinkBlank>
-          </li>
-          <li>
+          </ChildrenList>
+          <ChildrenList>
             <LinkBlank
               id="instagram"
               href="https://instagram.com/willzinhoz"
-              rel="noopener noreferrer"
               target="_blank"
+              rel="noopener noreferrer"
             >
               <Instagram />
             </LinkBlank>
-          </li>
+          </ChildrenList>
         </List>
       </Container>
     </React.Fragment>

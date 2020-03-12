@@ -12,50 +12,45 @@ const svgAnimation = keyframes`
 export const Container = styled.div`
   position: absolute;
   height: 90vh;
-  width: 50%;
+  width: 40vw;
+  margin: 0;
   top: 0;
   bottom: 0;
+  right: 5vw;
   left: auto;
-  right: 10%;
-  margin: 0;
 
   > svg {
     position: absolute;
-    top: 4vh;
-    bottom: 4vh;
-    left: auto;
-    right: 10%;
-    max-height: 80vh;
     margin: 0;
+    top: 0;
+    bottom: 0;
+    right: 5vw;
+    left: auto;
+    max-height: 90vh;
+    max-width: 100%;
 
-    > * #arrow {
-      animation: ${svgAnimation} 15s -1s;
+    *#arrow {
+      animation: ${svgAnimation} 20s;
     }
-    > * #w {
-      animation: ${svgAnimation} 15s -1s;
+    *#w {
+      animation: ${svgAnimation} 16s;
     }
-    > * #j {
-      animation: ${svgAnimation} 15s -1s;
+    *#j {
+      animation: ${svgAnimation} 8s;
     }
-    > * #dot {
-      animation: ${svgAnimation} 15s -1s;
+    *#dot {
+      animation: ${svgAnimation} 2s;
     }
-  }
-
-  @media(max-width: 939px) {
-    display: none
   }
 
   @media(max-width: 1079px) {
-    > svg {
-      width: 96%;
-    }
+    display: none;
   }
 
   @media(max-width: 1359px) {
-    right: 2%;
+    right: 2vh;
     > svg {
-      right: 2%;
+      right: 2vh;
     }
   }
 }

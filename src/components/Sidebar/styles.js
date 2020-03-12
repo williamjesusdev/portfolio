@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { NavLink as Link } from "react-router-dom";
 
 export const Container = styled.div`
   position: absolute;
@@ -69,10 +69,9 @@ export const NavLink = styled(Link)`
 
   &:after {
     font-size: 9px;
-    top: 40%;
     letter-spacing: 2px;
     position: absolute;
-    bottom: 5px;
+    bottom: 30%;
     left: 0;
     display: block;
     width: 100%;
@@ -100,7 +99,13 @@ export const List = styled.ul`
   padding: 0;
   list-style: none;
 
-  * > a {
+  @media only screen and (max-height: 619px) {
+    display: none;
+  }
+`;
+
+export const ChildrenList = styled.li`
+  > a {
     padding: 5px 0;
     display: block;
     width: 30%;
@@ -119,9 +124,5 @@ export const List = styled.ul`
     &#instagram:hover {
       color: #bc1888;
     }
-  }
-
-  @media only screen and (max-height: 629px) {
-    display: none;
   }
 `;

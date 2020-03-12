@@ -10,8 +10,9 @@ export const Container = styled.pre`
   color: #515152;
   font-size: 18px;
   font-family: "La Belle Aurore", cursive;
+  user-select: none;
 
-  @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
+  @media screen and (min-width: 320px) and (max-width: 819px) and (orientation: landscape) {
     &:nth-child(1n) {
       top: ${props => (props.top ? props.top + "vw" : "auto")};
       bottom: ${props => (props.bottom ? props.bottom + "vw" : "auto")};
@@ -25,10 +26,10 @@ export const Container = styled.pre`
       text-indent: ${props => (props.indent ? props.indent - 20 + "px" : "0")};
     }
     &:nth-child(3) {
-      text-indent: ${props => (props.indent ? props.indent - 30 + "px" : "0")};
+      text-indent: ${props => (props.indent ? props.indent - 35 + "px" : "0")};
     }
     &:nth-child(4) {
-      text-indent: ${props => (props.indent ? props.indent - 30 + "px" : "0")};
+      text-indent: ${props => (props.indent ? props.indent - 35 + "px" : "0")};
     }
   }
 `;

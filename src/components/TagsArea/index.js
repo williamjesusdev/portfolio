@@ -11,7 +11,7 @@ export default function TagsArea({ position }) {
       <Tags indent="60" top="25">
         {"<h1>"}
       </Tags>
-      <Tags indent="60" top={position || "52"} bottom="auto">
+      <Tags indent="60" top={position || "32"} bottom="auto">
         {"</h1>"}
       </Tags>
       <Tags indent="30" top="auto" bottom="0">

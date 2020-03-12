@@ -57,9 +57,11 @@ export const Container = styled.div`
   position: absolute;
   top: 30%;
   left: 145px;
+  font-family: "Raleway", sans-serif;
   font-size: 4vh;
   font-weight: 900;
   color: #fff;
+  user-select: none;
 
   @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
     font-size: 5vw;
@@ -73,8 +75,8 @@ export const Container = styled.div`
 
 export const Span = styled.span`
   color: #fff;
-  font-size: 7.4vh;
-  line-height: 7.1vh;
+  font-size: 7.2vh;
+  line-height: 7vh;
   letter-spacing: 2px;
   display: inline-block;
   transition: all 0.3s linear;
@@ -84,13 +86,13 @@ export const Span = styled.span`
     color: ${props => props.theme.second};
   }
 
-  @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
-    font-size: 8vw;
-    line-height: 7.5vw;
+  @media screen and (min-width: 320px) and (max-width: 819px) and (orientation: landscape) {
+    font-size: 7.1vw;
+    line-height: 7vw;
   }
 
   @media screen and (min-height: 320px) and (max-height: 819px) and (orientation: portrait) {
-    font-size: 9.4vw;
+    font-size: 6.4vw;
   }
 `;
 
@@ -98,7 +100,7 @@ export const Sub = styled.h2`
   color: #8d8d8d;
   margin-top: 35px;
   font-weight: 400;
-  font-size: 12px;
+  font-size: ${props => props.size || "12px"};
   font-family: "Open Sans", sans-serif;
   letter-spacing: 2px;
   animation: ${toAnimate} 1s 5s backwards;
@@ -110,7 +112,8 @@ export const Button = styled.button`
 
   margin-top: 20px;
   cursor: pointer;
-  font-size: 0.85em;
+  font-size: 0.7em;
+  font-family: "Roboto", sans-serif;
   padding: 0.25em 1em;
   border: 2px solid ${props => props.theme.primary || "palevioletred"};
   border-radius: 3px;
@@ -119,7 +122,7 @@ export const Button = styled.button`
 
 export const Paragraph = styled.div`
   color: #fff;
-  width: 40vw;
+  width: 45vw;
   margin-top: 35px;
   font-size: 16px;
   font-weight: 300;
@@ -129,7 +132,7 @@ export const Paragraph = styled.div`
     margin: 10px auto;
   }
 
-  @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
+  @media screen and (min-width: 320px) and (max-width: 819px) and (orientation: landscape) {
     width: 70vw;
     font-size: 15px;
   }
@@ -140,6 +143,9 @@ export const Paragraph = styled.div`
     & > p:nth-child(n + 3) {
       display: none;
     }
+    &: after {
+      content: "Vamos Conversar!?";
+    }
   }
 `;
 
@@ -148,7 +154,7 @@ export const Title = styled.h1`
   font-weight: 900;
   color: ${props => props.theme.primary};
 
-  @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
-    font-size: 6.3vw;
+  @media screen and (min-width: 320px) and (max-width: 819px) and (orientation: landscape) {
+    font-size: 5vw;
   }
 `;

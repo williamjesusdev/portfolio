@@ -1,9 +1,11 @@
 import React from "react";
 import { HashRouter as Router } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
-import { GlobalStyle } from "./styles/global";
+
+import { GlobalStyle, Page, Container } from "./styles/global";
 
 import Sidebar from "./components/Sidebar";
+
 import Routes from "./routes";
 
 export default function App() {
@@ -20,7 +22,11 @@ export default function App() {
       <ThemeProvider theme={theme}>
         <GlobalStyle />
         <Sidebar />
-        <Routes />
+        <Page>
+          <Container>
+            <Routes />
+          </Container>
+        </Page>
       </ThemeProvider>
     </Router>
   );
