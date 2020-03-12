@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
 * {
@@ -10,16 +10,16 @@ export const GlobalStyle = createGlobalStyle`
 
 html,
 body,
-#root {
-  max-width: 100vw;
+#app {
   min-height: 100vh;
   max-height: 100vh;
+  max-width: 100vw;
 }
 
 html {
   color: ${props => props.theme.foreground};
   font-size: 1em;
-  line-height: 1.4;
+  line-height: 1.4em;
 }
 
 body {
@@ -58,4 +58,32 @@ input:focus {
   max-height: 100vw;
   }
 }
+`;
+
+export const Page = styled.div`
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+
+  @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
+    min-height: 100vw;
+    min-width: 100vh;
+  }
+`;
+
+export const Container = styled.div`
+  position: absolute;
+  will-change: contents;
+  height: 94vh;
+  width: 100%;
+  margin: 0 auto;
+  top: 5vh;
+  bottom: 5vh;
+
+  @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
+    min-height: 94vw;
+    min-width: 100vh;
+    top: 5vw;
+    bottom: 5vw;
+  }
 `;

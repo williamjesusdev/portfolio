@@ -1,21 +1,20 @@
 import React from "react";
 
-import { Page, Container } from "./styles";
-
 import TagsArea from "../../components/TagsArea";
 import LogoArea from "../../components/LogoArea";
 import TextArea from "../../components/TextArea";
 
 export default function Home() {
-  document.title = "William's Portfólio";
+  document.title = "William Jesus";
 
   return (
-    <Page>
-      <Container>
-        <LogoArea />
-        <TagsArea />
-        <TextArea />
-      </Container>
-    </Page>
+    <React.Fragment>
+      <LogoArea />
+      <TagsArea position="50" />
+      <TextArea
+        title={"Oi~Eu Sou William~Desenvolvedor Web!"}
+        subtitle={"Back-End(NodeJS) / Front-End(ReactJS) / Mobile(ReactNative)"}
+      ></TextArea>
+    </React.Fragment>
   );
 }
