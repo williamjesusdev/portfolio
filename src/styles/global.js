@@ -51,6 +51,16 @@ input:focus {
   color: #fff;
 }
 
+@font-face {
+  font-family: 'Coolvetica';
+  src:url('fonts/Coolvetica.ttf.woff') format('woff'),
+      url('fonts/Coolvetica.ttf.svg#Coolvetica') format('svg'),
+      url('fonts/Coolvetica.ttf.eot'),
+      url('fonts/Coolvetica.ttf.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 @media screen and (min-width: 320px) and (max-width: 819px) and (orientation: landscape) {
   html {
   max-width: 100vh;

@@ -1,37 +1,93 @@
-import React from "react";
+import React, { useState } from "react";
 import Typing from "react-typing-animation";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import { Container, Span, Sub, Button, Paragraph, Title } from "./styles";
 
-export default function TextArea({ title, subtitle, children }) {
+export default function TextArea({ home, pre, title, subtitle, children }) {
+  const [actived, setActived] = useState(false);
+
   return (
     <Container>
-      <Typing speed={100}>
-        {useLocation().pathname === "/" ? (
-          title.split("").map(char => {
-            switch (char) {
-              case "~":
-                return <br />;
-              case "":
-                return " ";
-              case " ":
-                return " ";
-              default:
-                return <Span name="rubberBand">{char}</Span>;
-            }
-          })
-        ) : (
+      <Typing
+        cursorClassName="custom"
+        cursor={<span>_</span>}
+        speed={80}
+        onFinishedTyping={() => setActived(true)}
+      >
+        {!home ? (
           <Title>{title}</Title>
+        ) : pre ? (
+          <React.Fragment>
+            <Typing.Speed ms={80} />
+            {pre.split("").map(char => {
+              switch (char) {
+                case "~":
+                  return <br key={Math.random()} />;
+                case "":
+                  return " ";
+                case " ":
+                  return " ";
+                default:
+                  return (
+                    <Span key={Math.random()} name="rubberBand">
+                      {char}
+                    </Span>
+                  );
+              }
+            })}
+
+            <Typing.Backspace count={32} delay={100} speed={30} />
+            <Typing.Speed ms={50} />
+
+            {title.split("").map(char => {
+              switch (char) {
+                case "~":
+                  return <br key={Math.random()} />;
+                case "":
+                  return " ";
+                case " ":
+                  return " ";
+                default:
+                  return (
+                    <Span key={Math.random()} name="rubberBand">
+                      {char}
+                    </Span>
+                  );
+              }
+            })}
+          </React.Fragment>
+        ) : (
+          <React.Fragment>
+            <Typing.Speed ms={50} />
+            {title.split("").map(char => {
+              switch (char) {
+                case "~":
+                  return <br key={Math.random()} />;
+                case "":
+                  return " ";
+                case " ":
+                  return " ";
+                default:
+                  return (
+                    <Span key={Math.random()} name="rubberBand">
+                      {char}
+                    </Span>
+                  );
+              }
+            })}
+          </React.Fragment>
         )}
       </Typing>
-      {useLocation().pathname === "/" && <Sub>{subtitle}</Sub>}
-      {useLocation().pathname !== "/" && !children && (
-        <Sub size="18px">Em Construção!</Sub>
+      {home && <Sub className={actived && "active"}>{subtitle}</Sub>}
+      {!home && !children && (
+        <Sub className="fast" size="18px">
+          EM CONSTRUÇÃO...
+        </Sub>
       )}
-      {useLocation().pathname === "/" && (
+      {home && (
         <Link to="contact">
-          <Button>Entre em Contato</Button>
+          <Button className={actived && "active"}>Entre em Contato</Button>
         </Link>
       )}
       <Paragraph>{children}</Paragraph>

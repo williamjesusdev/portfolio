@@ -10,9 +10,11 @@ export default function Home() {
   return (
     <React.Fragment>
       <LogoArea />
-      <TagsArea position="50" />
+      <TagsArea position="50" home={true} />
       <TextArea
-        title={"Oi~Eu Sou William~Desenvolvedor Web!"}
+        home={true}
+        pre={"Hi,~I'm William,~Web Developer!"}
+        title={"Oi,~Eu Sou William,~Desenvolvedor Web!"}
         subtitle={"Back-End(NodeJS) / Front-End(ReactJS) / Mobile(ReactNative)"}
       ></TextArea>
     </React.Fragment>

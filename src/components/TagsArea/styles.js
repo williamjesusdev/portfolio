@@ -30,6 +30,8 @@ export const Container = styled.pre`
     }
     &:nth-child(4) {
       text-indent: ${props => (props.indent ? props.indent - 35 + "px" : "0")};
+      top: ${props =>
+        props.top && props.home ? props.top - 8 + "vh" : props.top + "vh"};
     }
   }
 `;
