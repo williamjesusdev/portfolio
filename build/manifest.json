@@ -1,6 +1,6 @@
 {
-  "short_name": "Portfolio App",
-  "name": "Created with React App",
+  "short_name": "Portfólio",
+  "name": "Criado com React 'CRA'",
   "icons": [
     {
       "src": "favicon.png",
